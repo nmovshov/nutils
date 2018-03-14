@@ -1,0 +1,26 @@
+{
+    "folders":
+    [
+        {
+            "path": "/C/Users/naor/nutils/ncclib"
+        }
+    ],
+    "settings":
+    {
+        "font_size": 10,
+        "rulers": [90],
+        "auto_complete_commit_on_tab": false,
+        "remember_open_files": true
+    },
+    "build_systems":
+    [
+        {
+            "name": "NCCLIBMAKE",
+            "cmd": ["g++", "-c", "ncclib.cpp", "&&", "g++", "test.cpp", "ncclib.o", "&&", "a"],
+            "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+            "working_dir": "${file_path}",
+            "selector": "source.c, source.c++",
+            "shell": true
+        }
+    ]
+}
