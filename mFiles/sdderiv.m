@@ -20,9 +20,10 @@ end
 validateattributes(x,{'numeric'},{'vector'})
 validateattributes(y,{'numeric'},{'vector'})
 assert(isequal(size(x),size(y)),'x and y data must have same size and shape.')
-assert(all(diff(x) > 0),'x-coordinates must be strictly monotonically increasing.')
 
-F = griddedInterpolant(x,y,'pchip');
+[xi,ind] = unique(x);
+yi = y(ind);
+F = griddedInterpolant(xi,yi,'pchip');
 yp = nan(size(x));
 for k=1:length(yp)
     x0 = x(k);
