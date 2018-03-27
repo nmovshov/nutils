@@ -1,3 +1,6 @@
 [submodule "mFiles/physunits"]
 	path = mFiles/physunits
 	url = https://github.com/nmovshov/physunits
+[submodule "mFiles/filexchange/export_fig"]
+	path = mFiles/filexchange/export_fig
+	url = https://github.com/altmany/export_fig.git
