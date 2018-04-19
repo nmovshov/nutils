@@ -2,6 +2,7 @@
 *~
 *.swp
 *.asv
+*.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -104,3 +105,4 @@ ENV/
 
 # mypy
 .mypy_cache/
+pyFiles/.vscode/settings.json
