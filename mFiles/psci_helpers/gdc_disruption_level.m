@@ -83,6 +83,8 @@ switch upper(scaling)
         dl = ls12(R,M,r,m,v,theta,bigG);
     case 'BA99'
         dl = ba99(R,M,m,v);
+    case 'GETAL19'
+        dl = getal19(R,M,r,m,v,theta,bigG);
     otherwise
         error('Unknown scaling method. Use one of: [METAL15 | LS12 | BA99].')
 end
@@ -194,6 +196,35 @@ dl = 2*(1 - fb);
 % Return
 end
 
+function dl = getal19(R,M,r,m,v,theta,G)
+%GETAL19 Disruption level according to Leinhardt & Stewart (2012) scaling.
+
+% Local variables
+Mtot = M + m;
+mu = M*m/(M + m);
+gam = m/M;
+vesc = sqrt(2*G*(M + m)/(R + r));
+
+% Kinetic energy of impact
+K = 0.5*mu*v^2;
+
+% Gravitational binding energy
+Ug = 3/5*G*M^2/R + 3/5*G*m^2/r + G*M*m/(R + r);
+Lambda = 0.98;
+
+% Determine hit-and-run impacts
+a = -34; b = 20; c = 9.4; d = 17.4; e = 0.86;
+tetaHnR = a*log10(gam) + b*Lambda^c;
+vHnR = d/rad2deg(theta) + e;
+ishitandrun = (rad2deg(theta) > tetaHnR) && (v/vesc > vHnR);
+
+
+% The kinetic energy scale
+
+dl = ishitandrun;
+end
+
 function print_usage()
-help(mfilename)
+fprintf('gdc_disruption_level(R, MRHO, r, mrho, v, theta=pi/4, ')
+fprintf('scaling=''METAL15'', nominal=false)\n')
 end
