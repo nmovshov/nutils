@@ -1,4 +1,4 @@
-function dl = gdc_disruption_level(R,MRHO,r,mrho,v,theta,scaling,nominal)
+function [dl,MLR] = gdc_disruption_level(R,MRHO,r,mrho,v,theta,scaling,nominal,Lambda)
 %GDC_DISRUPTION_LEVEL Level of target disruption in gravity-dominated collision.
 %   GDC_DISRUPTION_LEVEL(R,MRHO,r,mrho,v) returns the predicted level of
 %   disruption in a collision between a target of radius R and mass or density
@@ -45,13 +45,14 @@ function dl = gdc_disruption_level(R,MRHO,r,mrho,v,theta,scaling,nominal)
 if nargin == 0, print_usage(); return, end;
 
 % Required arguments
-narginchk(5,8);
+narginchk(5,9);
 
 % Optional arguments
 if ~exist('theta','var') || isempty(theta), theta = pi/4; end
 assert(theta >= 0 && theta < pi/2, 'Specify impact angle theta in [0,pi/2).')
 if ~exist('scaling','var'), scaling = 'METAL15'; end
 if ~exist('nominal','var'), nominal = false; end
+if ~exist('Lambda','var'), Lambda = 0.98; end
 assert(islogical(nominal))
 
 % Mass-or-density determined by numeric value (assume SI units)
@@ -78,13 +79,13 @@ end
 % Dispatch to subfunction based on method
 switch upper(scaling)
     case 'METAL15'
-        dl = metal15(R,M,r,m,v,theta,bigG,nominal);
+        [dl,MLR] = metal15(R,M,r,m,v,theta,bigG,nominal);
     case 'LS12'
-        dl = ls12(R,M,r,m,v,theta,bigG);
+        [dl,MLR] = ls12(R,M,r,m,v,theta,bigG);
     case 'BA99'
-        dl = ba99(R,M,m,v);
+        [dl,MLR] = ba99(R,M,m,v);
     case 'GETAL19'
-        dl = getal19(R,M,r,m,v,theta,bigG);
+        [dl,MLR] = getal19(R,M,r,m,v,theta,bigG,Lambda);
     otherwise
         error('Unknown scaling method. Use one of: [METAL15 | LS12 | BA99].')
 end
@@ -92,7 +93,7 @@ end
 % Return
 end
 
-function dl = ba99(R,M,m,v)
+function [dl,MLR] = ba99(R,M,m,v)
 %BA99 Disruption level according to Benz & Asphaug (1999) scaling.
 
 % Target density determines scaling-law parameters
@@ -113,11 +114,12 @@ QsD = double(B*rho*(R*100)^b);
 % Compare with specific impact energy
 Q = double(0.5*m/M*v^2);
 dl = Q/QsD;
+MLR = (M + m)*(1 - 0.5*dl);
 
 % Return
 end
 
-function dl = metal15(R,M,r,m,v,theta,G,nominal)
+function [dl,MLR] = metal15(R,M,r,m,v,theta,G,nominal)
 %METAL15 Disruption level according to Movshovitz et al. (2015) scaling.
 
 U = 3/5*G*M^2/R + 3/5*G*m^2/r + G*M*m/(R + r);
@@ -150,11 +152,12 @@ end
 dl = 1;
 if K_alpha > Kstar_hi, dl = K_alpha/Kstar_hi; end
 if K_alpha < Kstar_lo, dl = K_alpha/Kstar_lo; end
+MLR = (M + m)*(1 - 0.5*dl);
 
 % Return
 end
 
-function dl = ls12(R,M,r,m,v,theta,G)
+function [dl,MLR] = ls12(R,M,r,m,v,theta,G)
 %LS12 Disruption level according to Leinhardt & Stewart (2012) scaling.
 
 % Calculate reduced interacting mass
@@ -192,12 +195,17 @@ if (fb < 0.1)
 end
 %dl = Q_R/Q_prime_star_RD;
 dl = 2*(1 - fb);
+MLR = (M + m)*(1 - 0.5*dl);
 
 % Return
 end
 
-function dl = getal19(R,M,r,m,v,theta,G)
+function [dl,MLR] = getal19(R,M,r,m,v,theta,G,Lambda)
 %GETAL19 Disruption level according to Leinhardt & Stewart (2012) scaling.
+
+% Suggested values for fit parameters in Gabriel et al. (in review)
+a = -34; b = 20; c = 9.4; d = 17.4; e = 0.86; f = 2.3; g = 8.1; h = 3.8;
+alfa0 = 3.8;
 
 % Local variables
 Mtot = M + m;
@@ -210,21 +218,30 @@ K = 0.5*mu*v^2;
 
 % Gravitational binding energy
 Ug = 3/5*G*M^2/R + 3/5*G*m^2/r + G*M*m/(R + r);
-Lambda = 0.98;
 
-% Determine hit-and-run impacts
-a = -34; b = 20; c = 9.4; d = 17.4; e = 0.86;
+% Determine hit-and-run impacts and MLRstar
 tetaHnR = a*log10(gam) + b*Lambda^c;
 vHnR = d/rad2deg(theta) + e;
 ishitandrun = (rad2deg(theta) > tetaHnR) && (v/vesc > vHnR);
-
+if ishitandrun
+    xijump = 1 - 0.5*(tetaHnR/rad2deg(theta))^f;
+    MLRstar = Mtot - xijump*m;
+else
+    MLRstar = Mtot;
+end
 
 % The kinetic energy scale
+alfa = g*rad2deg(theta)^h + alfa0;
+Kstar = alfa*Ug;
 
-dl = ishitandrun;
+dl = 2*K/Kstar; % note the missing factor 1/2 in GETAL definition of MLR
+MLR = MLRstar*(1 - 0.5*dl);
+
+% Return
 end
 
 function print_usage()
+fprintf('Usage:\n\t')
 fprintf('gdc_disruption_level(R, MRHO, r, mrho, v, theta=pi/4, ')
-fprintf('scaling=''METAL15'', nominal=false)\n')
+fprintf('scaling=''METAL15'', nominal=false, Lambda=0.98)\n')
 end
