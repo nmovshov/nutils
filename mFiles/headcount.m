@@ -34,10 +34,10 @@ if fid == -1
 end
 c = onCleanup(@()fclose(fid)); % Leave no file behind...
 n = 0;
-mline = fgetl(fid);
+mline = strtrim(fgetl(fid));
 while ischar(mline) && ~isempty(mline) && strcmp(mline(1), header_mark)
     n = n + 1;
-    mline = fgetl(fid);
+    mline = strtrim(fgetl(fid));
 end
 
 function show_usage
