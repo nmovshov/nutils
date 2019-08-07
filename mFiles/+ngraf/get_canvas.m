@@ -25,6 +25,9 @@ target = validatestring(target, {'screen','projector','publication'});
 fh = figure;
 set(fh, 'defaultTextInterpreter', 'latex')
 set(fh, 'defaultLegendInterpreter', 'latex')
+set(fh, 'defaultLegendFontSize', 12)
+set(fh, 'defaultLegendFontSizeMode', 'manual')
+set(fh, 'defaultLineLinewidth', 2)
 ah = axes;
 ah.Box = 'on';
 hold(ah, 'on');
@@ -32,6 +35,7 @@ ah.XLabel.Interpreter = 'latex';
 ah.XLabel.FontSize = 14;
 ah.YLabel.Interpreter = 'latex';
 ah.YLabel.FontSize = 14;
+ah.Title.FontSize = 14;
 
 %% Center and scale (this often auto-tweaks other stuff)
 if ismember(target, {'projector','publication'})
