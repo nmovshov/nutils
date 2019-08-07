@@ -31,7 +31,7 @@ hold(ah, 'on');
 ah.XLabel.Interpreter = 'latex';
 ah.XLabel.FontSize = 14;
 ah.YLabel.Interpreter = 'latex';
-ah.YLabel.FontSize = 16;
+ah.YLabel.FontSize = 14;
 
 %% Center and scale (this often auto-tweaks other stuff)
 if ismember(target, {'projector','publication'})
