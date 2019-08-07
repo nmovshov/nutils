@@ -1,7 +1,7 @@
 function alphas = sphereslice(rrat, theta, phi, gridres)
 %SPHERESLICE Intersecting volume fractions of passing spheres.
 %   alphas = SPHERESLICE(rrat, theta, phi=0) returns the fraction of volumes of
-%   two spheres that intersects as they move across each other ina straight line.
+%   two spheres that intersects as they move across each other in a straight line.
 %   The geometry is defined by rrat, the ratio of the smaller sphere's radius to
 %   the larger, and the two impact angles theta and phi. If the relative motion of
 %   the spheres is parallel to the x-axis and the larger one (of radius R) is
