@@ -44,9 +44,7 @@ if ismember(target, {'projector','publication'})
 end
 
 %% The grey background is a signature MATLAB visual, but jarring for outsiders
-if ~ismember(target, {'screen'})
-    fh.Color = 'w';
-end
+fh.Color = 'w';
 
 %% Magnify tick labels (they inherit from axes font)
 if ismember(target, {'projector','publication'})
