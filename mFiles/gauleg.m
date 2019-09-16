@@ -28,6 +28,10 @@ function [x,w] = gauleg(x1,x2,n)
 % Computing (3 ed.). Cambridge University Press, New York, NY, USA.
 
 %% Input parsing and minimal assertions
+if nargin == 0
+    fprintf('usage:\n\t[x,w] = gauleg(x1,x2,n)\n')
+    return
+end
 narginchk(3,3)
 nargoutchk(2,2)
 validateattributes(x1,{'numeric'},{'scalar','finite','real'},1)
