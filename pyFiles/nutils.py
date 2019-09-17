@@ -142,11 +142,56 @@ def gauleg(x1, x2, n):
     assert np.all(np.isfinite(w))
     return (x,w)
 
+def Pn(n, x):
+    """Fast implementation of ordinary Legendre polynomials of low degree.
+
+    y = Pn(n,x) returns the ordinary Legendre polynomial of degree n evaulated at
+    x. For n <= 12 the polynomials are implemented explicitly resutling in faster
+    calculation compared with the recursion formula. For n > 12 we fall back on
+    scipy.special.eval_legendre(n,x).
+
+    Note: in keeping with the premise of an optimized implementation this function
+    performs no input checks at all. Use with care.
+    """
+
+    x = np.array(x, dtype=float)
+
+    if n == 0:
+        y = np.ones(x.shape)
+    elif n == 1:
+        y = x
+    elif n == 2:
+        y = 0.5*(3*x**2 - 1)
+    elif n == 3:
+        y = 0.5*(5*x**3 - 3*x)
+    elif n == 4:
+        y = (1/8)*(35*x**4 - 30*x**2 + 3)
+    elif n == 5:
+        y = (1/8)*(63*x**5 - 70*x**3 + 15*x)
+    elif n == 6:
+        y = (1/16)*(231*x**6 - 315*x**4 + 105*x**2 - 5)
+    elif n == 7:
+        y = (1/16)*(429*x**7 - 693*x**5 + 315*x**3 - 35*x)
+    elif n == 8:
+        y = (1/128)*(6435*x**8 - 12012*x**6 + 6930*x**4 - 1260*x**2 + 35)
+    elif n == 9:
+        y = (1/128)*(12155*x**9 - 25740*x**7 + 18018*x**5 - 4620*x**3 + 315*x)
+    elif n == 10:
+        y = (1/256)*(46189*x**10 - 109395*x**8 + 90090*x**6 - 30030*x**4 + 3465*x**2 - 63)
+    elif n == 11:
+        y = (1/256)*(88179*x**11 - 230945*x**9 + 218790*x**7 - 90090*x**5 + 15015*x**3 - 693*x)
+    elif n == 12:
+        y = (1/1024)*(676039*x**12 - 1939938*x**10 + 2078505*x**8 - 1021020*x**6 + 225225*x**4 - 18018*x**2 + 231)
+    else:
+        from scipy.special import eval_legendre
+        y = eval_legendre(n,x)
+
+    return y
+
 def _test():
     print("alo world")
-    x, w = gauleg(-1,2,5)
-    print(x)
-    print(w)
+    for k in range(14):
+        print("Pn({},(0,0.5,-0.5)) = {}".format(k, Pn(k,(0,0.5,-0.5))))
     return
 
 if __name__ == "__main__":
