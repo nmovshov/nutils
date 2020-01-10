@@ -25,8 +25,6 @@ fh = hands(1);
 ah = hands(2);
 set(fh, 'defaultTextInterpreter', 'latex')
 set(fh, 'defaultLegendInterpreter', 'latex')
-set(fh, 'defaultLegendFontSize', 12)
-set(fh, 'defaultLegendFontSizeMode', 'manual')
 set(fh, 'defaultLineLinewidth', 2)
 ah.Box = 'on';
 hold(ah, 'on');

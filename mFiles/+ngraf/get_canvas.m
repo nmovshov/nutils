@@ -25,8 +25,6 @@ target = validatestring(target, {'screen','projector','publication'});
 fh = figure;
 set(fh, 'defaultTextInterpreter', 'latex')
 set(fh, 'defaultLegendInterpreter', 'latex')
-set(fh, 'defaultLegendFontSize', 12)
-set(fh, 'defaultLegendFontSizeMode', 'manual')
 set(fh, 'defaultLineLinewidth', 2)
 ah = axes;
 ah.Box = 'on';
