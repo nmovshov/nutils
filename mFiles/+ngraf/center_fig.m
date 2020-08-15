@@ -12,4 +12,3 @@ gh = groot;
 fh.Position(1) = round(gh.ScreenSize(3)/2) - round(fh.Position(3)/2);
 fh.Position(2) = round(gh.ScreenSize(4)/2) - round(fh.Position(4)/2);
 end
-

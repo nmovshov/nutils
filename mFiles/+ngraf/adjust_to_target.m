@@ -51,19 +51,25 @@ end
 %% Magnify axes labels (must come AFTER parent axes font size)
 if ismember(target, {'projector','publication'})
     ah.XAxis.Label.FontSize = 24;
-    ah.YAxis.Label.FontSize = 26;
+    for k=1:length(ah.YAxis)
+        ah.YAxis(k).Label.FontSize = 26;
+    end
 end
 
 %% Magnify ticks
 if ismember(target, {'projector','publication'})
     ah.XAxis.TickLength(1) = 0.02;
-    ah.YAxis.TickLength(1) = 0.02;
+    for k=1:length(ah.YAxis)
+        ah.YAxis(k).TickLength(1) = 0.02;
+    end
 end
 
 %% Thicker axes lines are easier to see, especially in two-column typesetting
 if ismember(target, {'publication'})
     ah.XAxis.LineWidth = 2;
-    ah.YAxis.LineWidth = 2;
+    for k=1:length(ah.YAxis)
+        ah.YAxis(k).LineWidth = 2;
+    end
 end
 
 %% And BYU
