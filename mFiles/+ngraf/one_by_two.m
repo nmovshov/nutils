@@ -9,7 +9,7 @@ narginchk(0,1)
 if nargin == 0, fh = gcf; end
 validateattributes(fh,{'matlab.ui.Figure'},{'scalar'})
 
-ah = findobj(fh, 'type', 'axes');
+ah = flipud(findobj(fh, 'type', 'axes'));
 assert(length(ah) == 2, '1-by-2 grid has 2 spaces.')
 
 ah(1).Position = [0.1300, 0.1100, 0.3347, 0.8150];

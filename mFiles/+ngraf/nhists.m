@@ -18,11 +18,11 @@ if nargin == 0
 end
 narginchk(1,2)
 if nargin > 1 % hack for common case of two data sets
-    data1 = data;
-    validateattributes(data1,{'numeric'},{'vector'},'','data1')
+    validateattributes(data,{'numeric'},{'vector'},'','data1')
     validateattributes(data2,{'numeric'},{'vector'},'','data2')
-    data = {data1,data2};
+    data = {data,data2};
 end
+if ~iscell(data), data = {data}; end % hack for single dataset input
 validateattributes(data,{'cell'},{'vector'},'','data')
 assert(all(cellfun(@isvector,data)), 'nhists works on one-dimensional data.')
 

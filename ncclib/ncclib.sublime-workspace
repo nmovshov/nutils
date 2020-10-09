@@ -1,0 +1,938 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"\\rho",
+				"\\rho-\\robg"
+			],
+			[
+				"\\sigm",
+				"\\sigma_J"
+			],
+			[
+				"\\sig",
+				"\\sigma_J"
+			],
+			[
+				"\\ro",
+				"\\rho_a"
+			],
+			[
+				"\\Delta",
+				"\\Delta\\rho"
+			],
+			[
+				"\\sigma",
+				"\\sigma_J"
+			],
+			[
+				"qelc",
+				"qelc_posterior_profiles"
+			],
+			[
+				"sub",
+				"sub:fastof"
+			],
+			[
+				"no_",
+				"no_warnings"
+			]
+		]
+	},
+	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 490.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"up",
+				"Convert Case: Upper Case"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"fold all",
+				"Code Folding: Unfold All"
+			],
+			[
+				"lo",
+				"Convert Case: Lower Case"
+			],
+			[
+				"lowe",
+				"Convert Case: Lower Case"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"comm",
+				"Toggle Block Comment"
+			],
+			[
+				"surr",
+				"Surround: surround selection"
+			],
+			[
+				"sur",
+				"Surround: surround selection"
+			],
+			[
+				"del",
+				"Surround: delete surround"
+			],
+			[
+				"su",
+				"Surround: surround selection"
+			],
+			[
+				"de",
+				"Surround: delete surround"
+			],
+			[
+				"fold",
+				"Code Folding: Unfold All"
+			],
+			[
+				"auto",
+				"Auto Wrap: Toggle"
+			],
+			[
+				"word",
+				"LaTeXWordCount: Word Count"
+			],
+			[
+				"synt",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"s",
+				"Surround: surround selection"
+			],
+			[
+				"dele",
+				"Surround: delete surround"
+			],
+			[
+				"surrou",
+				"Surround: delete surround"
+			],
+			[
+				"Package Control: ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"begi",
+				"Snippet: \\begin{}…\\end{}"
+			],
+			[
+				"com",
+				"Toggle Comment"
+			],
+			[
+				"figur",
+				"Snippet: Figure"
+			],
+			[
+				"packa",
+				"Package Control: Disable Package"
+			],
+			[
+				"emph",
+				"Snippet: Emphasize text"
+			],
+			[
+				"latex",
+				"Snippet: Wrap selection in LaTeX command"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pak",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: u",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"foldin",
+				"Code Folding: Unfold All"
+			],
+			[
+				"li",
+				"Package Control: List Packages"
+			],
+			[
+				"list pa",
+				"Package Control: List Packages"
+			],
+			[
+				"snii",
+				"Snippet: figure"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"at",
+				"Auto Wrap: Toggle"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 565.0
+	},
+	"console":
+	{
+		"height": 171.0,
+		"history":
+		[
+			"ls",
+			"import sys",
+			"sys",
+			"%pwd",
+			"pwd",
+			"git",
+			"ls",
+			"pdflatex main.tex",
+			"latex",
+			"bibtex main.tex",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/nmovs/nutils/pyFiles/psci_helpers.py",
+		"/C/Users/nmovs/nutils/pyFiles/nutils.py",
+		"/C/Users/nmovs/GitHub/CMS-planet/cms.py",
+		"/C/Users/nmovs/GitHub/PIPE/+observables/+ssd/jupiter.m",
+		"/C/Users/nmovs/GitHub/PIPE/pyPIPE/observables.py",
+		"/C/Users/nmovs/GitHub/PIPE/+observables/+ssd/neptune.m",
+		"/C/Users/nmovs/GitHub/PIPE/+observables/+ssd/saturn.m",
+		"/C/Users/nmovs/GitHub/PIPE/+observables/Contents.m",
+		"/C/Users/nmovs/unpipes/+ahelpers/ahelpers.py",
+		"/C/Users/nmovs/unpipes/unpipes.m",
+		"/C/Users/nmovs/unpipes/drive-polyplanet_w_core.py",
+		"/C/Users/nmovs/unpipes/unpipes.py",
+		"/C/Users/nmovs/pqsaturn/pqsaturn.py",
+		"/C/Users/nmovs/GitHub/AAS19120/titleauthors.tex",
+		"/C/Users/nmovs/GitHub/AAS19120/arxiv.tex",
+		"/C/Users/nmovs/GitHub/AAS19120/main.tex",
+		"/C/Users/nmovs/GitHub/AAS19120/quartic_family.tex",
+		"/C/Users/nmovs/GitHub/AAS19120/keywords.tex",
+		"/C/Users/nmovs/GitHub/PIPE/pyPIPE/dprofs.py",
+		"/C/Users/nmovs/unpipes/drive-single_poly.py",
+		"/C/Users/nmovs/GitHub/PIPE/pyPIPE/losses.py",
+		"/C/Users/nmovs/GitHub/AAS19120/results.tex",
+		"/C/Users/nmovs/GitHub/AAS19120/ref-reply2.txt",
+		"/C/Users/nmovs/GitHub/AAS19120/discussion.tex",
+		"/C/Users/nmovs/GitHub/AAS19120/tgreport2.txt",
+		"/C/Users/nmovs/GitHub/AAS19120/tgreport.txt",
+		"/C/Users/nmovs/GitHub/AAS19120/method.tex",
+		"/C/Users/nmovs/unpipes/+ahelpers/fixpoly.m",
+		"/C/Users/nmovs/unpipes/setws.py",
+		"/C/Users/nmovs/unpipes/drive-single_poly_ES.py",
+		"/C/Users/nmovs/unpipes/polyneptune/drive-single_poly_ES.py",
+		"/C/Users/nmovs/unpipes/test.py",
+		"/C/Users/nmovs/unpipes/polyuranus/samplify_chains.py",
+		"/C/Users/nmovs/unpipes/polyneptune/samplify_chains.py",
+		"/C/Users/nmovs/unpipes/toy-neptune/drive-single_poly_ES.py",
+		"/C/Users/nmovs/unpipes/toy-neptune/setws.py",
+		"/C/Users/nmovs/unpipes/toy-uranus/setws.py",
+		"/C/Users/nmovs/unpipes/toy-neptune/single_poly_PT-sampler.py",
+		"/C/Users/nmovs/unpipes/single_poly_PT-sampler.py",
+		"/C/Users/nmovs/unpipes/+drivers/single_poly_PT-sampler.py",
+		"/C/Users/nmovs/GitHub/AAS19120/thanks.tex",
+		"/C/Users/nmovs/GitHub/AAS19120/abstract.tex",
+		"/C/Users/nmovs/GitHub/AAS19120/chains.tex",
+		"/C/Users/nmovs/pqsaturn/setws.py",
+		"/C/Users/nmovs/pqsaturn/+ahelpers/ahelpers.py",
+		"/C/Users/nmovs/GitHub/AAS19120/commands.tex",
+		"/C/Users/nmovs/GitHub/AAS19120/tgrepprog.txt",
+		"/C/Users/nmovs/GitHub/AAS19120/fullparam.tex",
+		"/C/Users/nmovs/pqsaturn/Mank19/evolution/load_mank_evol.py",
+		"/C/Users/nmovs/qelc-saturn/samplify_chains.py",
+		"/C/Users/nmovs/qelc-saturn/drive-fixed_radii.py",
+		"/C/Users/nmovs/qelc-saturn/setws.py",
+		"/C/Users/nmovs/qelc-saturn/+ahelpers/ahelpers.py",
+		"/C/Users/nmovs/GitHub/PIPE/pyPIPE/example_driver_with_PT.py",
+		"/C/Users/nmovs/qelc-saturn/qelcrot-fixed_radii.py",
+		"/C/Users/nmovs/GitHub/PIPE/pyPIPE/emcee2_mpi_demo.py",
+		"/C/Users/nmovs/GitHub/PIPE/pyPIPE/emcee2_PT_demo.py",
+		"/C/Users/nmovs/qelc-saturn/qelc_saturn.py",
+		"/C/Users/nmovs/qelc-saturn/+ahelpers/qelcrtrc_to_tqq.m",
+		"/C/Users/nmovs/qelc-saturn/+ahelpers/npz_to_ascii.py",
+		"/C/Users/nmovs/qelc-saturn/+ahelpers/samplify_chains.py",
+		"/C/Users/nmovs/unpipes/+ahelpers/samplify_chains.py",
+		"/C/Users/nmovs/GitHub/PIPE/pyPIPE/priors.py",
+		"/C/Users/nmovs/qelc-saturn/saturn_priors.py",
+		"/C/Users/nmovs/qelc-saturn/PT-qelcrot-fixed_radii.py",
+		"/C/Users/nmovs/qelc-saturn/PT-qelc-fixed_radii.py",
+		"/C/Users/nmovs/GitHub/PIPE/graveyard/obsolete_priors.py",
+		"/C/Users/nmovs/jcpipes/qelc-saturn/samplify_chains.py",
+		"/C/Users/nmovs/unpipes/+ahelpers/poly-running-means.py",
+		"/C/Users/nmovs/unpipes/+ahelpers/poly-correlations.py",
+		"/C/Users/nmovs/unpipes/+ahelpers/poly-traces.py",
+		"/C/Users/nmovs/unpipes/toy-uranus/single_poly_PT-sampler.py",
+		"/C/Users/nmovs/jcpipes/qelc-saturn/PT-qelc-fixed_radii.py",
+		"/C/Users/nmovs/GitHub/paper1/thanks.tex",
+		"/C/Users/nmovs/GitHub/paper1/main.tex",
+		"/C/Users/nmovs/GitHub/physunits/setUnits.m",
+		"/C/Users/nmovs/GitHub/physunits/setFUnits.m",
+		"/C/Users/nmovs/jcpipes/qelc-saturn/dash/README.md",
+		"/C/Users/nmovs/GitHub/paper1/results.tex",
+		"/C/Users/nmovs/GitHub/paper1/discussion.tex",
+		"/C/Users/nmovs/GitHub/paper1/method.tex",
+		"/C/Users/nmovs/GitHub/paper1/intro.tex",
+		"/C/Users/nmovs/GitHub/paper1/commands.tex",
+		"/C/Users/nmovs/GitHub/paper1/abstract.tex",
+		"/C/Users/nmovs/GitHub/paper1/newrefs.txt",
+		"/C/Users/nmovs/GitHub/paper1/main.bbl",
+		"/C/Users/nmovs/GitHub/paper1/library.bib",
+		"/C/Users/nmovs/GitHub/paper1/titleauthors.tex",
+		"/C/Users/nmovs/GitHub/PIPE/+barotropes/+SCVH/scvh_hhe_adiabat.py",
+		"/C/Users/nmovs/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
+		"/C/Users/nmovs/GitHub/paper1/assets/description.tex",
+		"/C/Users/nmovs/Google Drive/Projects/SSW2019/main.tex",
+		"/C/Users/nmovs/Google Drive/Projects/phd/thesis/main.tex",
+		"/C/Users/nmovs/GitHub/CMS-planet/notes/CMS.tex",
+		"/C/Users/nmovs/GitHub/TOF-planet/notes/ToF.tex",
+		"/C/Users/nmovs/jcpipes/qelc-saturn/npz_to_ascii.py",
+		"/C/Users/nmovs/qelc-saturn/src/samplify_chains.py",
+		"/C/Users/nmovs/qelc-saturn/src/setws.py",
+		"/C/Users/nmovs/GitHub/poolmaker/poolmaker.py",
+		"/C/Users/nmovs/qelc-saturn/ahelpers/ahelpers.py",
+		"/C/Users/nmovs/qelc-saturn/src/reseed.py",
+		"/C/Users/nmovs/qelc-saturn/src/samplify_chain.py",
+		"/C/Users/nmovs/GitHub/PIPE/pyPIPE/setws.py",
+		"/C/Users/nmovs/NSF/main.tex",
+		"/C/Users/nmovs/NSF/description.tex",
+		"/C/Users/nmovs/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/README.markdown",
+		"/C/Users/nmovs/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/LaTeXTools.sublime-settings",
+		"/C/Users/nmovs/Downloads/NSF/main.tex",
+		"/C/Users/nmovs/Downloads/NSF/description.tex",
+		"/C/Users/nmovs/Downloads/NSF/agu08.bst",
+		"/C/Users/nmovs/Downloads/NSF/NSF.cls",
+		"/C/Users/nmovs/Downloads/NSF/library.bib",
+		"/C/Users/nmovs/jcpipes/reports/saturn_manuscript/main.tex",
+		"/C/Users/nmovs/Downloads/NSF 2018, Giant Planet Interiors/NSF.cls",
+		"/C/Users/nmovs/Downloads/NSF 2018, Giant Planet Interiors/commands.tex",
+		"/C/Users/nmovs/NSF 2018 -- Giant Planet Interiors/main.tex",
+		"/C/Users/nmovs/NSF 2018 -- Giant Planet Interiors/summary.tex",
+		"/C/Users/nmovs/AppData/Local/Temp/Temp1_NSF 2018 -- Giant Planet Interiors.zip/sections/summary.tex",
+		"/C/Users/nmovs/NSF 2018 -- Giant Planet Interiors/NSF.cls",
+		"/C/Users/nmovs/NSF 2018 -- Giant Planet Interiors/data.tex",
+		"/C/Users/nmovs/NSF 2018 -- Giant Planet Interiors/resources.tex",
+		"/C/Users/nmovs/NSF 2018 -- Giant Planet Interiors/support.tex",
+		"/C/Users/nmovs/NSF 2018 -- Giant Planet Interiors/budget.tex",
+		"/C/Users/nmovs/NSF 2018 -- Giant Planet Interiors/description.tex",
+		"/C/Users/nmovs/jcpipes/reports/saturn_manuscript/abstract.tex",
+		"/C/Users/nmovs/NSF 2018 -- Giant Planet Interiors/main.log",
+		"/C/Users/nmovs/NSF 2018 -- Giant Planet Interiors/bio.tex",
+		"/C/Users/nmovs/Google Drive/nnotes/math/legendre.tex"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"fix_mrot",
+			"T",
+			";",
+			"fix_rho",
+			"with_m",
+			"with_rho",
+			"rho0",
+			"mrot",
+			"pfh",
+			"x",
+			"pfh",
+			"read_seeds",
+			"pfh",
+			"rho0",
+			"lnprob",
+			"args",
+			"read_seeds",
+			"seed",
+			"ndims",
+			"fix",
+			"mass",
+			"args",
+			"seedfile",
+			"tof",
+			"            %",
+			"%   ",
+			"pfh",
+			"existence",
+			"dilute",
+			"jloss",
+			"main",
+			"lnprob",
+			"read_seeds",
+			"serial",
+			"True",
+			"False",
+			"out",
+			"sigfactor",
+			"un",
+			"obs",
+			"run",
+			"mloss",
+			"pqsaturn",
+			"xlayers",
+			"jumps",
+			"delta_rh",
+			"residual_d",
+			"residual",
+			"implied_",
+			"posterior_profiles_ensemble_subset",
+			"obtaining",
+			"o",
+			"difference",
+			"large",
+			"mankovich_suite_reps",
+			"strong",
+			"again",
+			"continue",
+			"continu",
+			"continue",
+			"sec",
+			"perio",
+			"rotat",
+			"sec:lo",
+			"loss",
+			"observation",
+			"and",
+			"continuous",
+			"dist",
+			"dsqr",
+			"mloss",
+			"_sam",
+			"_tof4",
+			"Jupiter",
+			"decay",
+			"normal",
+			"dJ",
+			"quart",
+			"ws",
+			"Z1",
+			"PTSampler",
+			"ndims",
+			"mpi",
+			"));",
+			"x",
+			"logit",
+			"lz1",
+			"R_m",
+			"ndims",
+			"saturn_priors",
+			"tripquad_quartictop",
+			"temp",
+			"obs",
+			"np",
+			"lnfake",
+			"fakelike",
+			"prior",
+			"timer",
+			"profile",
+			"fit",
+			"around",
+			"cor",
+			"uranus",
+			"\n#",
+			"''",
+			"new_samples",
+			"skip",
+			"hist",
+			"Uranus",
+			"walkers",
+			"FILENAME",
+			"cout",
+			"np",
+			"os",
+			"sys",
+			"were",
+			"an",
+			"make",
+			"available",
+			"somewhat",
+			"residual",
+			"being",
+			"barotrope",
+			"within",
+			"equilibrium\\footnot",
+			"miscibility",
+			"trueof",
+			"  "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"obser",
+				"pyPIPE\\observables.py"
+			],
+			[
+				"net",
+				"+observables\\+ssd\\neptune.m"
+			],
+			[
+				"ssdne",
+				"+observables\\+ssd\\neptune.m"
+			],
+			[
+				"sa",
+				"+observables\\+ssd\\saturn.m"
+			],
+			[
+				"+obs+ssdsat",
+				"+observables\\+ssd\\saturn.m"
+			],
+			[
+				"+obse+ssjup",
+				"+observables\\+ssd\\jupiter.m"
+			],
+			[
+				"+obsecone",
+				"+observables\\Contents.m"
+			],
+			[
+				"pypipe/obs",
+				"pyPIPE\\observables.py"
+			],
+			[
+				"dri",
+				"drive-polyplanet_w_core.py"
+			],
+			[
+				"unp",
+				"unpipes.py"
+			],
+			[
+				"un",
+				"unpipes.m"
+			],
+			[
+				"unpip",
+				"unpipes.py"
+			],
+			[
+				"unpi",
+				"unpipes.m"
+			],
+			[
+				"obse",
+				"observables.py"
+			],
+			[
+				"tit",
+				"titleauthors.tex"
+			],
+			[
+				"cha",
+				"chains.tex"
+			],
+			[
+				"par",
+				"fullparam.tex"
+			],
+			[
+				"res",
+				"results.tex"
+			],
+			[
+				"ar",
+				"arxiv.tex"
+			],
+			[
+				"ma",
+				"main.tex"
+			],
+			[
+				"key",
+				"keywords.tex"
+			],
+			[
+				"au",
+				"titleauthors.tex"
+			],
+			[
+				"arxi",
+				"arxiv.tex"
+			],
+			[
+				"mai",
+				"main.tex"
+			],
+			[
+				"resu",
+				"results.tex"
+			],
+			[
+				"tg",
+				"tgreport.txt"
+			],
+			[
+				"meth",
+				"method.tex"
+			],
+			[
+				"arx",
+				"arxiv.tex"
+			],
+			[
+				"dis",
+				"discussion.tex"
+			],
+			[
+				"discu",
+				"discussion.tex"
+			],
+			[
+				"disc",
+				"discussion.tex"
+			],
+			[
+				"com",
+				"commands.tex"
+			],
+			[
+				"me",
+				"method.tex"
+			],
+			[
+				"pro",
+				"tgrepprog.txt"
+			],
+			[
+				"abs",
+				"abstract.tex"
+			],
+			[
+				"title",
+				"titleauthors.tex"
+			],
+			[
+				"pr",
+				"tgrepprog.txt"
+			],
+			[
+				"comm",
+				"commands.tex"
+			],
+			[
+				"prog",
+				"tgrepprog.txt"
+			],
+			[
+				"prg",
+				"tgrepprog.txt"
+			],
+			[
+				"met",
+				"method.tex"
+			],
+			[
+				"tgre",
+				"tgrepprog.txt"
+			],
+			[
+				"ch",
+				"chains.tex"
+			],
+			[
+				"qua",
+				"quartic_family.tex"
+			],
+			[
+				"full",
+				"fullparam.tex"
+			],
+			[
+				"re",
+				"results.tex"
+			],
+			[
+				"c",
+				"chains.tex"
+			],
+			[
+				"metho",
+				"method.tex"
+			],
+			[
+				"th",
+				"thanks.tex"
+			],
+			[
+				"tha",
+				"thanks.tex"
+			],
+			[
+				"main",
+				"main.tex"
+			],
+			[
+				"intr",
+				"intro.tex"
+			],
+			[
+				"di",
+				"discussion.tex"
+			],
+			[
+				"intro",
+				"intro.tex"
+			],
+			[
+				"new",
+				"newrefs.txt"
+			],
+			[
+				"abst",
+				"abstract.tex"
+			],
+			[
+				"mainbbl",
+				"main.bbl"
+			],
+			[
+				"libra",
+				"library.bib"
+			],
+			[
+				"maitex",
+				"main.tex"
+			],
+			[
+				"libr",
+				"library.bib"
+			],
+			[
+				"aut",
+				"titleauthors.tex"
+			],
+			[
+				"in",
+				"intro.tex"
+			],
+			[
+				"des",
+				"assets\\description.tex"
+			],
+			[
+				"a",
+				"assets\\description.tex"
+			],
+			[
+				"ti",
+				"titleauthors.tex"
+			],
+			[
+				"su",
+				"summary.tex"
+			],
+			[
+				"summ",
+				"summary.tex"
+			],
+			[
+				"desc",
+				"description.tex"
+			],
+			[
+				"agu",
+				"agu08.bst"
+			],
+			[
+				"li",
+				"library.bib"
+			],
+			[
+				"nsf",
+				"NSF.cls"
+			],
+			[
+				"ns",
+				"NSF.cls"
+			],
+			[
+				"da",
+				"data.tex"
+			],
+			[
+				"supp",
+				"support.tex"
+			],
+			[
+				"budg",
+				"budget.tex"
+			],
+			[
+				"sum",
+				"summary.tex"
+			],
+			[
+				"bi",
+				"bio.tex"
+			],
+			[
+				"",
+				"titleauthors.tex"
+			],
+			[
+				"inte",
+				"intro.tex"
+			],
+			[
+				"int",
+				"intro.tex"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 261.6,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"zma",
+				"fig:ZMASS"
+			]
+		],
+		"width": 592.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 188.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
