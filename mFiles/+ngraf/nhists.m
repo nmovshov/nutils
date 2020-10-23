@@ -30,7 +30,9 @@ assert(all(cellfun(@isvector,data)), 'nhists works on one-dimensional data.')
 [fh,ah] = ngraf.get_canvas(); % holds ah, fyi
 hh = gobjects(size(data));
 for k=1:length(data)
-    hh(k) = histogram(data{k});
+    hh(k) = histogram(data{k},'Normalization','pdf');
 end
 
+% Some styling and annotation
+ylabel('P density')
 end
