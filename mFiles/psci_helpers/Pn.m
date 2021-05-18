@@ -1,13 +1,13 @@
 function y = Pn(n,x)
 %PN Fast implementation of ordinary Legendre polynomials of low degree.
-%   y = Pn(n,x) returns the ordinary Legendre polynomial of degree n evaulated at
-%   x. For n <= 12 the polynomials are implemented explicitly resutling in faster
-%   calculation compared with the recursion formula used by the built-in Legendre
-%   function. For n > 12 we fall back to calling Legendre(n,x), but the output is
-%   still just the ordinary (m=0) polynomial.
+%   y = Pn(n,x) returns the ordinary Legendre polynomial of degree n evaulated
+%   at x. For n <= 12 the polynomials are implemented explicitly resutling in
+%   faster calculation compared with the recursion formula used by the built-in
+%   Legendre function. For n > 12 we fall back to calling Legendre(n,x), but
+%   the output is still just the ordinary (m=0) polynomial.
 %
-%   Note: in keeping with the premise of an optimized implementation this function
-%   performs no input checks at all. Use with care.
+%   Note: in keeping with the premise of an optimized implementation this
+%   function performs no input checks at all. Use with care.
 
 switch n
     case 0
