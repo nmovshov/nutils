@@ -1,14 +1,14 @@
 function [fh, ah] = adjust_to_target(target, hands)
 %ADJUST_TO_TARGET Modify existing figure and/or axes properties to my liking.
-%   [fh, ah] = ADJUST_TO_TARGET(target) modifies properties of the current figure
-%   and axes to get closer to publication/presentation style, based on where the
-%   figure is destined to end up, as defined by the string target. Currently the
-%   supported targets are 'screen', 'publication', and 'projector'. Use this
-%   function to modify existing figures to get a similar look to figures created
-%   with ngraf.get_canvas().
+%   [fh, ah] = ADJUST_TO_TARGET(target) modifies properties of the current
+%   figure and axes to get closer to publication/presentation style, based on
+%   where the figure is destined to end up, as defined by the string target.
+%   Currently the supported targets are 'screen', 'publication', and
+%   'projector'. Use this function to modify existing figures to get a similar
+%   look to figures created with ngraf.get_canvas().
 %
-%   [fh, ah] = ADJUST_TO_TARGET(target,[fh,ah]) works on given handles instead of
-%   currents.
+%   [fh, ah] = ADJUST_TO_TARGET(target,[fh,ah]) works on given handles instead
+%   of currents.
 
 %% Inputs
 if nargin == 0

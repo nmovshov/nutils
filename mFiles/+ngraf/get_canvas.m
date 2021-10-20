@@ -1,20 +1,21 @@
 function [fh, ah] = get_canvas(target)
 %GET_CANVAS Return handles to new figure and axes set up the way I like.
-%   [fh, ah] = GET_CANVAS() creates and returns handles to a new figure and axes
-%   and modifies the default values of a few properties to get closer to
-%   publication/presentation style. Typically the result will have to be tweaked a
-%   little more for the actual camera-ready figure, but in ways that will depend
-%   on the content and can't be generalized. On the other hand, I don't want to
-%   override the groot defaults even of properties I virtually always modify. This
-%   is partly because I find that the defaults work well for the quick glance,
-%   exploration phase, and partly because I want to stay aware of what the
-%   defaults are.
+%   [fh, ah] = GET_CANVAS() creates and returns handles to a new figure and
+%   axes and modifies the default values of a few properties to get closer to
+%   publication/presentation style. Typically the result will have to be
+%   tweaked a little more for the actual camera-ready figure, but in ways that
+%   will depend on the content and can't be generalized. On the other hand, I
+%   don't want to override the groot defaults even of properties I virtually
+%   always modify. This is partly because I find that the defaults work well
+%   for the quick glance, exploration phase, and partly because I want to stay
+%   aware of what the defaults are.
 %
-%   [fh, ah] = GET_CANVAS(target) further modifies the defaults based on where the
-%   figure is destined to end up, as defined by the string target. Currently the
-%   supported targets are 'screen', 'publication', and 'projector', and in fact
-%   'publication' and 'projector' have almost the same look, but this can change.
-%   The default is target='screen'. (Hint: partial match works.)
+%   [fh, ah] = GET_CANVAS(target) further modifies the defaults based on where
+%   the figure is destined to end up, as defined by the string target.
+%   Currently the supported targets are 'screen', 'publication', and
+%   'projector', and in fact 'publication' and 'projector' have almost the same
+%   look, but this can change. The default is target='screen'. (Hint: partial
+%   match works.)
 
 %% Inputs
 narginchk(0,1)
