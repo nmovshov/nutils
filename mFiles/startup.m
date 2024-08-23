@@ -18,7 +18,7 @@ switch mname
     case 'OLGA-SOLDRIF'
         set(groot,'DefaultFigurePosition',[488 342 560 420])
     case 'LUBAN'
-        set(groot,'DefaultFigurePosition',[488 342 560 420])
+        set(groot,'DefaultFigurePosition',[360 235 560 420])
     otherwise
 end
 
