@@ -1,4 +1,4 @@
-classdef chesscalar
+classdef chesscalar < matlab.mixin.CustomDisplay
     %CHESSCALAR A field comprising the four chess pieces with custom + and *
     properties (Constant, Hidden)
         pieces = {'Q','R','B','N','NaN'}
@@ -14,11 +14,6 @@ classdef chesscalar
             if nargin > 0
                 obj.kind = validatestring(kind, obj.pieces);
             end
-        end
-
-        %% Display overload
-        function disp(obj)
-            fprintf(1,'%6s\n',obj.kind)
         end
 
         %% Chess arithmetic
@@ -147,6 +142,22 @@ classdef chesscalar
         
         function p2 = uplus(p1)
             p2 = p1;
+        end
+    end
+
+    %% Custom display
+    methods (Access = protected)
+        function displayScalarObject(obj)
+            fprintf(1,'%6c\n',obj.kind)
+        end
+
+        function displayNonScalarObject(obj)
+            for j=1:size(obj,1)
+                for k=1:size(obj,2)
+                    fprintf(1,'%6c',obj(j,k).kind)
+                end
+                fprintf(1,'\n')
+            end
         end
     end
 end
