@@ -18,51 +18,60 @@ classdef barnumber < matlab.mixin.CustomDisplay
 
         %% Barnyard basic arithmetic
         function TF = eq(p1,p2)
-            TF = p1.kind == p2.kind;
+            if p2 == 0
+                TF = [p1.kind] == 'K';
+            else
+                TF = p1.kind == p2.kind;
+            end
         end
 
         function TF = ne(p1,p2)
             TF = ~(p1 == p2);
         end
 
-        function r = plus(p1,p2)
+        function R = plus(p1,p2)
             %PLUS Addition table for barnumbers
-            switch p1.kind
-                case 'G'
-                    switch p2.kind
-                        case 'K'
-                            r = barnumber('G');
-                        case 'C'
-                            r = barnumber('D');
-                        case 'D'
-                            r = barnumber('C');
-                        case 'G'
-                            r = barnumber('K');
-                    end
-                case 'C'
-                    switch p2.kind
-                        case 'K'
-                            r = barnumber('C');
-                        case 'C'
-                            r = barnumber('K');
-                        case 'D'
-                            r = barnumber('G');
-                        case 'G'
-                            r = barnumber('D');
-                    end
-                case 'D'
-                    switch p2.kind
-                        case 'K'
-                            r = barnumber('D');
-                        case 'C'
-                            r = barnumber('G');
-                        case 'D'
-                            r = barnumber('K');
-                        case 'G'
-                            r = barnumber('C');
-                    end
-                case 'K'
-                    r = barnumber(p2.kind);
+            assert(all(size(p1) == size(p2)))
+            R = repmat(barnumber('k'),size(p1));
+            for k=1:numel(R)
+                switch p1(k).kind
+                    case 'G'
+                        switch p2(k).kind
+                            case 'K'
+                                r = barnumber('G');
+                            case 'C'
+                                r = barnumber('D');
+                            case 'D'
+                                r = barnumber('C');
+                            case 'G'
+                                r = barnumber('K');
+                        end
+                    case 'C'
+                        switch p2(k).kind
+                            case 'K'
+                                r = barnumber('C');
+                            case 'C'
+                                r = barnumber('K');
+                            case 'D'
+                                r = barnumber('G');
+                            case 'G'
+                                r = barnumber('D');
+                        end
+                    case 'D'
+                        switch p2(k).kind
+                            case 'K'
+                                r = barnumber('D');
+                            case 'C'
+                                r = barnumber('G');
+                            case 'D'
+                                r = barnumber('K');
+                            case 'G'
+                                r = barnumber('C');
+                        end
+                    case 'K'
+                        r = barnumber(p2(k).kind);
+                end
+                R(k) = r;
             end
         end
 
@@ -78,55 +87,63 @@ classdef barnumber < matlab.mixin.CustomDisplay
             p2 = p1;
         end
 
-        function r = times(p1,p2)
+        function R = times(p1,p2)
             %TIMES Multiplication table for barnumbers
-            switch p1.kind
-                case 'D'
-                    switch p2.kind
-                        case 'K'
-                            r = barnumber('K');
-                        case 'C'
-                            r = barnumber('D');
-                        case 'D'
-                            r = barnumber('G');
-                        case 'G'
-                            r = barnumber('C');
-                    end
-                case 'G'
-                    switch p2.kind
-                        case 'K'
-                            r = barnumber('K');
-                        case 'C'
-                            r = barnumber('G');
-                        case 'D'
-                            r = barnumber('C');
-                        case 'G'
-                            r = barnumber('D');
-                    end
-                case 'C'
-                    r = barnumber(p2.kind);
-                case 'K'
-                    r = barnumber('K');
+            assert(all(size(p1)==size(p2)),"dimension mismatch")
+            R = repmat(barnumber('k'),size(p1));
+            for k=1:numel(R)
+                switch p1(k).kind
+                    case 'D'
+                        switch p2(k).kind
+                            case 'K'
+                                r = barnumber('K');
+                            case 'C'
+                                r = barnumber('D');
+                            case 'D'
+                                r = barnumber('G');
+                            case 'G'
+                                r = barnumber('C');
+                        end
+                    case 'G'
+                        switch p2(k).kind
+                            case 'K'
+                                r = barnumber('K');
+                            case 'C'
+                                r = barnumber('G');
+                            case 'D'
+                                r = barnumber('C');
+                            case 'G'
+                                r = barnumber('D');
+                        end
+                    case 'C'
+                        r = barnumber(p2(k).kind);
+                    case 'K'
+                        r = barnumber('K');
+                end
+                R(k) = r;
             end
         end
 
-        function r = inv(p1)
+        function R = inv(p1)
             %INV Multiplicative inverse barnumber
-            switch p1.kind
-                case 'C'
-                    r = barnumber('C');
-                case 'D'
-                    r = barnumber('G');
-                case 'G'
-                    r = barnumber('D');
-                case 'K'
-                    r = NaN;
+            R = repmat(barnumber('k'),size(p1));
+            for k=1:numel(R)
+                switch p1(k).kind
+                    case 'C'
+                        r = barnumber('C');
+                    case 'D'
+                        r = barnumber('G');
+                    case 'G'
+                        r = barnumber('D');
+                    case 'K'
+                        r = NaN;
+                end
+                R(k) = r;
             end
         end
         
         function r = rdivide(p1,p2)
             %RDIVIDE Division table for barnumbers
-            if p2.kind == 'K', r = nan; return, end
             r = p1.*inv(p2);
         end
         
@@ -179,8 +196,14 @@ classdef barnumber < matlab.mixin.CustomDisplay
             s = string(x.kind);
         end
         
-        function a = get_barn()
+        function [a,b,c,d] = get_barn()
             a = [barnumber('k'),barnumber('c'),barnumber('d'),barnumber('g')];
+            if nargout == 4
+                b = a(2);
+                c = a(3);
+                d = a(4);
+                a = a(1);
+            end
         end
 
         function show_add_table()
