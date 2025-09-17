@@ -87,14 +87,14 @@ classdef barnumber < matlab.mixin.CustomDisplay
             p2 = p1;
         end
 
-        function R = times(p1,p2)
+        function R = times(A,B)
             %TIMES Multiplication table for barnumbers
-            assert(all(size(p1)==size(p2)),"dimension mismatch")
-            R = repmat(barnumber('k'),size(p1));
+            assert(all(size(A)==size(B)),"dimension mismatch")
+            R = repmat(barnumber('k'),size(A));
             for k=1:numel(R)
-                switch p1(k).kind
+                switch A(k).kind
                     case 'D'
-                        switch p2(k).kind
+                        switch B(k).kind
                             case 'K'
                                 r = barnumber('K');
                             case 'C'
@@ -105,7 +105,7 @@ classdef barnumber < matlab.mixin.CustomDisplay
                                 r = barnumber('C');
                         end
                     case 'G'
-                        switch p2(k).kind
+                        switch B(k).kind
                             case 'K'
                                 r = barnumber('K');
                             case 'C'
@@ -116,7 +116,7 @@ classdef barnumber < matlab.mixin.CustomDisplay
                                 r = barnumber('D');
                         end
                     case 'C'
-                        r = barnumber(p2(k).kind);
+                        r = barnumber(B(k).kind);
                     case 'K'
                         r = barnumber('K');
                 end
@@ -124,29 +124,15 @@ classdef barnumber < matlab.mixin.CustomDisplay
             end
         end
 
-        function R = inv(p1)
-            %INV Multiplicative inverse barnumber
-            R = repmat(barnumber('k'),size(p1));
+        function R = rdivide(A,B)
+            %RDIVIDE Division table for barnumbers
+            assert(all(size(A)==size(B)),"dimension mismatch")
+            R = repmat(barnumber('k'),size(A));
             for k=1:numel(R)
-                switch p1(k).kind
-                    case 'C'
-                        r = barnumber('C');
-                    case 'D'
-                        r = barnumber('G');
-                    case 'G'
-                        r = barnumber('D');
-                    case 'K'
-                        r = NaN;
-                end
-                R(k) = r;
+                R(k) = A(k).*sinv(B(k));
             end
         end
-        
-        function r = rdivide(p1,p2)
-            %RDIVIDE Division table for barnumbers
-            r = p1.*inv(p2);
-        end
-        
+
         %% Basic array/matrix functionality
         function r = dot(a,b)
             assert(numel(a) == numel(b), "Incompatible dimensions")
@@ -167,6 +153,10 @@ classdef barnumber < matlab.mixin.CustomDisplay
                 end
             end
         end
+
+        function R = mrdivide(A,B)
+            R = rdivide(A,B);
+        end
     end
 
     %% Custom display
@@ -183,6 +173,24 @@ classdef barnumber < matlab.mixin.CustomDisplay
                 fprintf(1,'\n')
             end
         end
+
+        function R = sinv(p1)
+            %SINV Scalar multiplicative inverse barnumber
+            R = repmat(barnumber('k'),size(p1));
+            for k=1:numel(R)
+                switch p1(k).kind
+                    case 'C'
+                        r = barnumber('C');
+                    case 'D'
+                        r = barnumber('G');
+                    case 'G'
+                        r = barnumber('D');
+                    case 'K'
+                        error('Division by Kow error.')
+                end
+                R(k) = r;
+            end
+        end
     end
 
     %% Class-related methods
@@ -195,7 +203,7 @@ classdef barnumber < matlab.mixin.CustomDisplay
         function s = to_string(x)
             s = string(x.kind);
         end
-        
+
         function [a,b,c,d] = get_barn()
             a = [barnumber('k'),barnumber('c'),barnumber('d'),barnumber('g')];
             if nargout == 4
