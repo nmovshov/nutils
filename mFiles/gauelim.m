@@ -26,7 +26,7 @@ eroflag = nargout > 1;
 pr = 1;
 pc = 1;
 while (pr < m) && (pc < n)
-    if all(A(:,pc) == 0)
+    if all(A(pr:end,pc) == 0)
         pc = pc + 1;
     else
         i = pr + find(A(pr:end,pc)~=0,1) - 1;
