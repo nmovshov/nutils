@@ -195,6 +195,15 @@ classdef barnumber < matlab.mixin.CustomDisplay
 
     %% Class-related methods
     methods(Static)
+        function I = eye(n)
+            arguments
+                n (1,1) {mustBePositive, mustBeInteger}
+            end
+            I = barnumber.kows(n,n);
+            for i=1:n
+                I(i,i) = barnumber('c');
+            end
+        end
         function K = kows(m,n)
             if nargin == 1, n = m; end
             K = repmat(barnumber('k'),m,n);
