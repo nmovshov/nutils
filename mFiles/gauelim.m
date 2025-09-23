@@ -47,10 +47,8 @@ while (pr < m) && (pc < n)
                     s = sprintf("R%d->R%d-R%d",i,i,pr);
                 elseif f == -1
                     s = sprintf("R%d->R%d+R%d",i,i,pr);
-                elseif f > 0
-                    s = sprintf("R%d->R%d-(%s)R%d",i,i,strip(rats(f)),pr);
                 else
-                    s = sprintf("R%d->R%d+(%s)R%d",i,i,strip(rats(-f)),pr);
+                    s = sprintf("R%d->R%d-(%s)R%d",i,i,strip(rats(f)),pr);
                 end
                 ero = [ero; s]; %#ok<AGROW>
             end
