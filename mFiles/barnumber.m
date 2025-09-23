@@ -16,10 +16,27 @@ classdef barnumber < matlab.mixin.CustomDisplay
             end
         end
 
+        %% Overloaded converters
+        function s = string(obj)
+            s = obj.kind;
+        end
+
+        function s = char(obj)
+            s = obj.kind;
+        end
+
+        function s = rats(obj)
+            s = obj.kind;
+        end
+
         %% Barnyard basic arithmetic
         function TF = eq(p1,p2)
             if p2 == 0
                 TF = [p1.kind] == 'K';
+            elseif p2 == 1
+                TF = [p1.kind] == 'C';
+            elseif p2 == -1
+                TF = [p1.kind] == 'C';
             else
                 TF = p1.kind == p2.kind;
             end
@@ -126,6 +143,8 @@ classdef barnumber < matlab.mixin.CustomDisplay
 
         function R = rdivide(A,B)
             %RDIVIDE Division table for barnumbers
+            if isscalar(A) && (A == 1), A = barnumber('c'); end
+            if isscalar(A), A = repmat(A,size(B)); end
             assert(all(size(A)==size(B)),"dimension mismatch")
             R = repmat(barnumber('k'),size(A));
             for k=1:numel(R)
