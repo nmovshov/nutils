@@ -214,6 +214,22 @@ classdef barnumber < matlab.mixin.CustomDisplay
 
     %% Class-related methods
     methods(Static)
+        function a = kow()
+            a = barnumber('k');
+        end
+
+        function a = chicken()
+            a = barnumber('c');
+        end
+
+        function a = dog()
+            a = barnumber('d');
+        end
+
+        function a = goat()
+            a = barnumber('g');
+        end
+
         function I = eye(n)
             arguments
                 n (1,1) {mustBePositive, mustBeInteger}
@@ -223,6 +239,7 @@ classdef barnumber < matlab.mixin.CustomDisplay
                 I(i,i) = barnumber('c');
             end
         end
+
         function K = kows(m,n)
             if nargin == 1, n = m; end
             K = repmat(barnumber('k'),m,n);
