@@ -1,18 +1,18 @@
-function [A,ero] = gauelim(A)
-%GAUELIM Gaussian eliminate matrix by the book
-%   GAUELIM(A) returns a matrix in row echelon form that is row equivalent to
+function [A,ero] = gjref(A)
+%GJREF REF matrix by the book
+%   GJREF(A) returns a matrix in row echelon form that is row equivalent to
 %   the input matrix A. Row echelon forms are not unique; the matrix returned
-%   by GAUELIM(A) is the row echelon form that results from applying the
+%   by GJREF(A) is the row echelon form that results from applying the
 %   textbook Gaussian elimination algorithm with no unnecessary row swaps and
 %   no type-2 row operations. A zero pivot is resolved by swapping the pivot
 %   row with the next-lower row with a non-zero entry in the pivot column.
 %
-%   [A,ero] = GAUELIM(A) additionally returns a string array detailing the
+%   [A,ero] = GJREF(A) additionally returns a string array detailing the
 %   elimination process. The string ero(k) describes the k-th row operation.
 
 %% Input parsing and minimal assertions
 if nargin == 0
-    fprintf('usage:\n\t[A,e] = gauelim(A)\n')
+    fprintf('usage:\n\t[A,e] = gjref(A)\n')
     return
 end
 narginchk(1,1)
