@@ -25,7 +25,7 @@ eroflag = nargout > 1;
 [m,n] = size(A);
 pr = 1;
 pc = 1;
-while (pr < m) && (pc < n)
+while (pr < m) && (pc <= n)
     if all(A(pr:end,pc) == 0)
         pc = pc + 1;
     else
