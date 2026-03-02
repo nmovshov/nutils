@@ -106,6 +106,13 @@ classdef barnumber < matlab.mixin.CustomDisplay
 
         function R = times(A,B)
             %TIMES Multiplication table for barnumbers
+            if isscalar(A)
+                a11 = A;
+                A = barnumber.kows(size(B,1),size(B,2));
+                for k=1:numel(A)
+                    A(k) = a11;
+                end
+            end
             assert(all(size(A)==size(B)),"dimension mismatch")
             R = repmat(barnumber('k'),size(A));
             for k=1:numel(R)
