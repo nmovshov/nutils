@@ -14,12 +14,12 @@ function [fh, ah] = get_canvas(target)
 %   the figure is destined to end up, as defined by the string target.
 %   Currently the supported targets are 'screen', 'publication', and
 %   'projector', and in fact 'publication' and 'projector' have almost the same
-%   look, but this can change. The default is target='screen'. (Hint: partial
+%   look, but this can change. The default is target='proj'. (Hint: partial
 %   match works.)
 
 %% Inputs
 narginchk(0,1)
-if nargin == 0, target = 'screen'; end
+if nargin == 0, target = 'projector'; end
 target = validatestring(target, {'screen','projector','publication'});
 
 %% For all targets
